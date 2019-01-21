@@ -15,7 +15,7 @@ using namespace std;
 
 const int inf = (int)1e9;
 
-const int GEN = 100, N = 20, TOURNAMENT_SIZE = 5, MAX_COST = 250, BITS = 100;
+const int GEN = 100, N = 20, TOUR_SIZE = 5, MAX_COST = 250, BITS = 100;
 
 int h, w, VOLUME[100][100], COST[100][100];
 vector<bitset<100> > population;
@@ -23,7 +23,7 @@ vector<bitset<100> > population;
 bitset<100> select(){
     int min_volume = -inf;
     bitset<100> fittest;
-    for(int i = 0; i < TOURNAMENT_SIZE; ++i){
+    for(int i = 0; i < TOUR_SIZE; ++i){
         int rnd = rand() % sz(population);
         bitset<100> cur = population[rnd];
         
